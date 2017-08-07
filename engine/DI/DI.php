@@ -27,7 +27,9 @@ class DI
      */
     public function get($key)
     {
-        return $this->has($key);
+        if ($this->has($key)) {
+            return $this->container[$key];
+        }
     }
 
     /**
