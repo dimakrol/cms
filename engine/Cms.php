@@ -22,6 +22,6 @@ class Cms
      */
     public function run()
     {
-        var_export($this->di->get('test'));
+        print_r($this->di);
     }
 }

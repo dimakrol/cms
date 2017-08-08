@@ -19,11 +19,17 @@ class Connection
      */
     private function connect()
     {
-        $config = require_once 'config.php';
+        $config = [
+            'host'     => 'localhost',
+            'dbname'   => 'city',
+            'username' => 'root',
+            'password' => '14011987',
+            'charset'  => 'utf8'
+        ];
 
-        $dsn = 'mesql:host='.$config['host'].';dbname='.$config['db_name'].';charset='.$config['charset'];
+        $dsn = 'mysql:host='.$config['host'].';dbname='.$config['db_name'].';charset='.$config['charset'];
 
-        $this->link = new PDO($dsn, $config['username'], $config['password']);
+        $this->link = new \PDO($dsn, $config['username'], $config['password']);
 
         return $this;
     }
